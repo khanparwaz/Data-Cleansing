@@ -41,3 +41,6 @@ data_set <- data_set[mean_std]
 activity_lables <- merge(activity_lables, activity, by="lable")
 data_set <- cbind(subject, activity_lables[2], data_set)
 
+
+# Write subset to disk
+write.csv(data_set[1:100,], "UCI_HAR_Dataset.csv")
