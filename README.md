@@ -19,9 +19,35 @@ The tidy data set has been upoaded as UCI_HAR_Dataset.csv
 ##CodeBook
 The data set contains the following 81 variables:
 
-1. Subject number (1-30)
-2. Activity (1=Walking, 2=walking upstairs, 3=walking downstairs, 4=sitting, 5=standing, 6=laying)
-3. 
+1. Subject: Subject number (1-30)
+2. Activity: Activity type (1=Walking, 2=walking upstairs, 3=walking downstairs, 4=sitting, 5=standing, 6=laying)
+
+Remaining variables provide measurements (some of which in three axes). For each variable, the mean and standard deviation are available:
+* tBodyAcc-XYZ
+* tGravityAcc-XYZ
+* tBodyAccJerk-XYZ
+* tBodyGyro-XYZ
+* tBodyGyroJerk-XYZ
+* tBodyAccMag
+* tGravityAccMag
+* tBodyAccJerkMag
+* tBodyGyroMag
+* tBodyGyroJerkMag
+* fBodyAcc-XYZ
+* fBodyAccJerk-XYZ
+* fBodyGyro-XYZ
+* fBodyAccMag
+* fBodyAccJerkMag
+* fBodyGyroMag
+* fBodyGyroJerkMag
 
 ##Procedure
+The run_analysis.R file transforms the data set as follows:
 
+1. Download and unzip the raw data (if not already present)
+2. Read all relevant table (training and data set bounded)
+3. Assign variable names
+4. Edit variable names (remove brackets and replace dashes with underscores to force compatability)
+5. Filter variables with measurements on the mean and standard deviation for each measurement
+6. Add subjects and activities to measurements
+7. Write partial data set to disk
